@@ -71,7 +71,7 @@ const SideNav = () => {
       bg="#242424"
       p="16px"
       direction="column"
-      display={["none","none","flex","flex"]}
+      display={["none","none","none", "none","flex"]}
     >
       <Accordion allowMultiple width="full">
         {menuDummy.map((menu, i) => (

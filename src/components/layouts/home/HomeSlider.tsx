@@ -12,14 +12,20 @@ const HomeSlider = () => {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
-    <Flex alignItems={"flex-start"} mt={5}>
-      <Box w={"1120px"} className="home-slider">
-        <Slider  {...settings}>
+    <Flex mt={[2,2,5,5]}>
+      <Box
+        w={["calc(100vw - 32px)", "calc(100vw - 64px)", "calc(100vw - 32px)", "calc(100vw - 192px)", "900px", "1120px"]}
+        // minH="200px"
+        className="home-slider"
+        mx="auto"
+      >
+        <Slider {...settings}>
           {bannerDummy.map((ban, i) => (
             <Flex key={i} borderRadius={"10px"} overflow={"hidden"}>
               <Image w={"100%"} minH={"100px"} src={ban.src} alt="gift" objectFit={"contain"} />

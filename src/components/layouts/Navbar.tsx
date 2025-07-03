@@ -1,11 +1,12 @@
+"use client"
 import { Button, Flex, Image } from "@chakra-ui/react";
 import React from "react";
 import mm_logo from "../../../public/img/mm-logo.png";
 import mm_logo_mobile from "../../../public/img/mm-logo-mobile.png";
-import { useDispatch } from "react-redux";
 import DefaultButton from "../utils/DefaultButton";
 import { clientAction } from "configs/redux/client-slice";
 import { colors } from "configs/theme/colors";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Navbar = () => {
         w={"100%"}
         minH={"30px"}
         bg={colors.primary.bg}
-        p={["8px", "8px 391px 8px 16px"]}
+        p={["8px", "8px", "8px", "8px", "8px 391px 8px 16px"]}
         pos={"sticky"}
         zIndex={2}
         top={0}

@@ -1,0 +1,24 @@
+import React from 'react';
+import { Box, Image, Text } from '@chakra-ui/react';
+
+interface BigWinItemProps {
+  img: string;
+  user: string;
+  amount: string;
+}
+
+const BigWinItem: React.FC<BigWinItemProps> = ({ img, user, amount }) => (
+  <Box
+    minW={["100px", "100px", "100px", "100px", "100px", "80px"]}
+    bg="#333"
+    borderRadius="md"
+    p={[2,2,4,4,4,4]}
+    textAlign="center"
+  >
+    <Image src={img} alt="game" boxSize="62px" mx="auto" mb={1} objectFit={"contain"} />
+    <Text fontSize="xs" noOfLines={1}>{user}</Text>
+    <Text fontSize="xs" color="teal.200">{amount}</Text>
+  </Box>
+);
+
+export default BigWinItem; 

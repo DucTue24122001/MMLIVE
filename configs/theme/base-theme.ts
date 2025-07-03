@@ -15,7 +15,10 @@ const baseTheme = extendTheme({
         fontSize: "13px",
         fontWeight:"400",
         bg: colors.primary.bg ,
-        bgImage:bg.src,
+        bgImage: bg.src,
+        bgRepeat: "no-repeat",
+        bgSize: "cover",
+        bgPosition: "center",
       },
     })
   },

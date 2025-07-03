@@ -15,44 +15,77 @@
 
 @media screen and (max-width: 992px) {
   .layout-center {
-    width: 100%;
+    width: 100vw;
     height: 100dvh;
+    padding: 0 16px;
+  }
+  .home-slider .slick-dots button {
+    height: 5px !important;
   }
 }
 
 /* css dots */
 
-/* Dấu chấm tổng thể */
+.home-slider .slick-dots li button:before {
+  display: none;
+}
+
+.home-slider img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .home-slider .slick-dots {
-  display: flex !important;
-  justify-content: center;
-  gap: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  position: absolute;
   bottom: -10px;
 }
 
-/* Chấm mặc định */
-.home-slider .slick-dots li button {
-  width: 16px;
-  height: 16px;
-  padding: 0;
+.home-slider .slick-dots button {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 5px;
+  width: 20px;
+  border-radius: 9999px;
+  margin: 5px;
+  transition: all .3s ease;
+  font-size: 0;
 }
 
-.home-slider .slick-dots li button:before {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-color: gray;
-  border-radius: 50%;
-  opacity: 1;
+.home-slider .slick-dots button:focus {
+  outline: none;
 }
 
-/* Chấm đang active → đổi thành thanh dài bo góc */
-.home-slider .slick-dots li.slick-active button:before {
-  width: 60px; /* chiều dài thanh */
-  height: 10px;
-  background-color: #b9f7ff;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.home-slider .slick-dots .slick-active button {
+  background: #B4F1F6;
+}
+
+.home-slider .slick-track{
+  display: flex;
+}
+
+.home-slider .slick-slide{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  .home-slider .slick-dots button {
+    width: 20px !important;
+    height: 2px !important;   
+  }
 }
 
