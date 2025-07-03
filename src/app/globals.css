@@ -4,8 +4,6 @@
 }
 
 .layout-center {
-  margin: auto;
-  /* min-width:400px; */
   width: 1120px;
   height: 100dvh;
 }
@@ -21,3 +19,40 @@
     height: 100dvh;
   }
 }
+
+/* css dots */
+
+/* Dấu chấm tổng thể */
+.home-slider .slick-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
+  bottom: -10px;
+}
+
+/* Chấm mặc định */
+.home-slider .slick-dots li button {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+
+.home-slider .slick-dots li button:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* Chấm đang active → đổi thành thanh dài bo góc */
+.home-slider .slick-dots li.slick-active button:before {
+  width: 60px; /* chiều dài thanh */
+  height: 10px;
+  background-color: #b9f7ff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+

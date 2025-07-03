@@ -1,9 +1,11 @@
-import { Center, Flex } from "@chakra-ui/react";
+import HomeSlider from "@/components/layouts/home/HomeSlider";
+import { Center, Flex, Image } from "@chakra-ui/react";
+
 
 export default function Home() {
   return (
-    <Center className="layout-center" fontSize={28}>
-      {`<3`}
-    </Center>
+    <Flex className="layout-center" fontSize={28} margin={"auto"}>
+      <HomeSlider />
+    </Flex>
   );
 }

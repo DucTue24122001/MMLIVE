@@ -6,6 +6,7 @@ import LoginModal from "../auth/LoginModal";
 import SignupModal from "../auth/SignupModal";
 import { store } from "configs/redux/store";
 import baseTheme from "configs/theme/base-theme";
+import SideNav from "./navigation/SideNav";
 
 type TMain = {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ const Main = ({ children }: TMain) => {
     <Provider store={store}>
       <ChakraProvider theme={baseTheme}>
         <Navbar />
+        <SideNav/>
         {children}
         <LoginModal />
         <SignupModal />
