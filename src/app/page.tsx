@@ -4,11 +4,14 @@ import Navbar from "@/components/layouts/Navbar";
 import BottomNavBar from "@/components/layouts/navigation/BottomNavBar";
 import { Box, Flex } from "@chakra-ui/react";
 import { colors } from "configs/theme/colors";
+import ClientOnly from "@/components/utils/ClientOnly";
 
 export default function Home() {
   return (
     <Box minH="100vh">
-      <Navbar />
+      <ClientOnly>
+        <Navbar />
+      </ClientOnly>
       <Flex
         direction="column"
         align="center"
@@ -17,10 +20,14 @@ export default function Home() {
         pt={[3, 5, 8]}
         pb={[16, 8, 8]} // chừa chỗ cho bottom nav trên mobile
       >
-        <HomeSlider />
+        <ClientOnly>
+          <HomeSlider />
+        </ClientOnly>
         <HomePage />
       </Flex>
-      <BottomNavBar />
+      <ClientOnly>
+        <BottomNavBar />
+      </ClientOnly>
     </Box>
   );
 }

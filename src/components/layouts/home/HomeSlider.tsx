@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import banner1 from "../../../../public/img/banner1.png";
 import banner2 from "../../../../public/img/banner2.jpg";
 import banner3 from "../../../../public/img/banner3.jpg";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import Slider from "react-slick";
+import WithSkeleton from "@/components/utils/WithSkeleton";
 
 const HomeSlider = () => {
   const settings = {
@@ -21,17 +22,18 @@ const HomeSlider = () => {
     <Flex mt={[2,2,5,5]}>
       <Box
         w={["calc(100vw - 32px)", "calc(100vw - 64px)", "calc(100vw - 32px)", "calc(100vw - 192px)", "900px", "1120px"]}
-        // minH="200px"
         className="home-slider"
         mx="auto"
       >
-        <Slider {...settings}>
-          {bannerDummy.map((ban, i) => (
-            <Flex key={i} borderRadius={"10px"} overflow={"hidden"}>
-              <Image w={"100%"} minH={"100px"} src={ban.src} alt="gift" objectFit={"contain"} />
-            </Flex>
-          ))}
-        </Slider>
+        <WithSkeleton skeletonType="banner">
+          <Slider {...settings}>
+            {bannerDummy.map((ban, i) => (
+              <Flex key={i} borderRadius={"10px"} overflow={"hidden"}>
+                <Image w={"100%"} minH={"100px"} src={ban.src} alt="gift" objectFit={"contain"} />
+              </Flex>
+            ))}
+          </Slider>
+        </WithSkeleton>
       </Box>
     </Flex>
   );

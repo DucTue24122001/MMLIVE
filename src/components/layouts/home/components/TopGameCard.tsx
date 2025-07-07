@@ -1,34 +1,45 @@
 import React from 'react';
-import { Box, Badge, Image, Text } from '@chakra-ui/react';
+import { Box, Text, Image, Flex } from '@chakra-ui/react';
 
 interface TopGameCardProps {
   rank: number;
   name: string;
   img: string;
+  bgGradient: string;
 }
 
-const TopGameCard: React.FC<TopGameCardProps> = ({ rank, name, img }) => (
+const TopGameCard: React.FC<TopGameCardProps> = ({ rank, name, img, bgGradient }) => (
   <Box
-    bgGradient="linear(135deg, #A770EF 0%, #FDB99B 100%)"
-    borderRadius="lg"
-    p={3}
-    textAlign="center"
-    color="white"
     position="relative"
+    bgGradient={bgGradient}
+    borderRadius="lg"
+    minW="180px"
+    h="120px"
+    overflow="visible"
+    px={4}
+    py={3}
+    display="flex"
+    alignItems="center"
+    mr={"10px"}
   >
-    <Badge
+    <Box zIndex={2}>
+      <Text fontSize="32px" fontWeight={700} lineHeight="1">{rank}</Text>
+      <Text fontWeight="bold" fontSize="20px" lineHeight="1">{name}</Text>
+    </Box>
+    <Image
+      src={img}
+      alt={name}
       position="absolute"
-      top={2}
-      left={2}
-      colorScheme="pink"
-      borderRadius="full"
-      px={2}
-      fontSize="sm"
-    >
-      {rank}
-    </Badge>
-    <Image src={img} alt={name} boxSize="48px" mx="auto" mb={2} borderRadius="md" />
-    <Text fontWeight="bold" fontSize="sm">{name}</Text>
+      right={2}
+      top="50%"
+      transform="translateY(-50%)"
+      w="120px"
+      h="140px"
+      borderRadius="md"
+      objectFit="cover"
+      zIndex={1}
+      boxShadow="lg"
+    />
   </Box>
 );
 

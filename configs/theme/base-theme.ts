@@ -12,7 +12,7 @@ const baseTheme = extendTheme({
         minH: "100dvh",
         maxW: "100%",
         mx: "auto",
-        fontSize: "13px",
+        fontSize: "14px",
         fontWeight:"400",
         bg: colors.primary.bg ,
         bgImage: bg.src,

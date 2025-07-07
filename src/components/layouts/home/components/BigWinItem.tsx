@@ -9,15 +9,16 @@ interface BigWinItemProps {
 
 const BigWinItem: React.FC<BigWinItemProps> = ({ img, user, amount }) => (
   <Box
-    minW={["100px", "100px", "100px", "100px", "100px", "80px"]}
+    minW={["100px", "100px", "100px", "100px", "100px", "110px"]}
+    h={"150px"}
     bg="#333"
     borderRadius="md"
-    p={[2,2,4,4,4,4]}
+    p={[2,2,2,2,2,2]}
     textAlign="center"
   >
-    <Image src={img} alt="game" boxSize="62px" mx="auto" mb={1} objectFit={"contain"} />
-    <Text fontSize="xs" noOfLines={1}>{user}</Text>
-    <Text fontSize="xs" color="teal.200">{amount}</Text>
+    <Image src={img} alt="game" boxSize="100px" mx="auto" mb={1} objectFit={"contain"} />
+    <Text fontSize="12px" noOfLines={1}>{user}</Text>
+    <Text fontSize="12px" color="teal.200">{amount}</Text>
   </Box>
 );
 
